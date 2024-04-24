@@ -1,0 +1,17 @@
+FROM python:3.9.0
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN mkdir -p ./neural_network/models
+
+COPY ./neural_network/models/depression_model.h5 neural_network/models/depression_model.h5
+COPY ./neural_network/models/emotion_voice_model.h5 neural_network/models/emotion_voice_model.h5
+
+CMD ["python", "neural_network/main/main.py"]
+
+EXPOSE 8000

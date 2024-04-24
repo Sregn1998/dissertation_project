@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Prediction</title>
+</head>
+<body>
+    <h1>FastAPI Prediction</h1>
+    
+    <form action="http://127.0.0.1:8000/prediction/" method="post" enctype="multipart/form-data">
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file" accept="video/*">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

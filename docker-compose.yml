@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile_main
+    ports:
+      - "8000:8000"
+
+  unit_tests:
+    build:
+      context: .
+      dockerfile: Dockerfile_tests
+
+# version: '3'
+
+# services:
+#   main:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile_main
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./data:/usr/src/app/data  # Сохранение данных приложения
+#       - ./logs:/usr/src/app/logs  # Сохранение логов
+
+#   unit_tests:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile_tests
+#     depends_on:
+#       - main  # Указывает, что unit_tests должны запускаться после main
+#     volumes:
+#       - ./data:/usr/src/app/data  # Доступ к данным для тестирования
+#       - ./logs:/usr/src/app/logs  # Доступ к логам
